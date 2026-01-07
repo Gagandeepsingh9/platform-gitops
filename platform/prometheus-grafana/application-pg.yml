@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ingress-nginx
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Gagandeepsingh9/platform-gitops
+    path: prometheus-grafana
+    helm:
+      repoURL: https://prometheus-community.github.io/helm-charts
+      chart: prometheus
+      valueFiles:
+        - values-pg.yml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: monitoring
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

@@ -1,0 +1,8 @@
+controller:
+  nodeSelector:
+    nodegroup: system
+  tolerations:
+  - key: nodegroup
+    value: system
+    operator: Equal
+    effect: NO_SCHEDULE
