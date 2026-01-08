@@ -7,14 +7,17 @@ metadata:
     argocd.argoproj.io/sync-wave: "0"
 spec:
   project: default
-  source:
-    repoURL: https://github.com/Gagandeepsingh9/platform-gitops
-    path: platform/cert-manager/
+  sources:
+  - repoURL: 'https://charts.jetstack.io'
+    chart: cert-manager
+    targetRevision: v1.12.0
     helm:
-      repoURL: oci://quay.io/jetstack/charts/cert-manager:v1.19.2
-      chart: cert-manager
       valueFiles:
-      - values-cert-manager.yml
+      - $values/platform/cert-manager/values-cert-manager.yml
+    
+  - repoURL: 'https://github.com/Gagandeepsingh9/platform-gitops.git'
+    targetRevision: main
+    ref: values
 
   destination:
     server: https://kubernetes.default.svc
