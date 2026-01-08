@@ -1,0 +1,12 @@
+global:
+  nodeSelector: 
+    nodegroup: system
+  tolerations:
+  - key: nodegroup
+    operator: Equal
+    value: system
+    effect: NO_SCHEDULE
+
+server:
+  service:
+    type: LoadBalancer
