@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/Gagandeepsingh9/platform-gitops
-    path: prometheus-grafana
+    path: platform/prometheus-grafana/
     helm:
       repoURL: https://prometheus-community.github.io/helm-charts
       chart: prometheus

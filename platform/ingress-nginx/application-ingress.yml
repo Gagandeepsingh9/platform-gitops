@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/Gagandeepsingh9/platform-gitops
-    path: ingress-nginx
+    path: platform/ingress-nginx/
     helm:
       repoURL: https://kubernetes.github.io/ingress-nginx
       chart: ingress-nginx

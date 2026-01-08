@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/Gagandeepsingh9/platform-gitops
-    path: cert-manager
+    path: platform/cert-manager/
     helm:
       repoURL: https://charts.jetstack.io
       chart: cert-manager
