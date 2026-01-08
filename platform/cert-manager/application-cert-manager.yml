@@ -11,7 +11,7 @@ spec:
     repoURL: https://github.com/Gagandeepsingh9/platform-gitops
     path: platform/cert-manager/
     helm:
-      repoURL: https://charts.jetstack.io
+      repoURL: oci://quay.io/jetstack/charts/cert-manager:v1.19.2
       chart: cert-manager
       valueFiles:
       - values-cert-manager.yml
