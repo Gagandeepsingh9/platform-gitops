@@ -2,6 +2,8 @@ kind: ClusterIssuer
 apiVersion: cert-manager.io/v1
 metadata:
   name: letsencrypt-prod
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
 spec:
   acme:
     email: gagan13.ca@gmail.com

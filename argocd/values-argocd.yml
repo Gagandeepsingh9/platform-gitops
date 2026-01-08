@@ -5,7 +5,7 @@ global:
   - key: nodegroup
     operator: Equal
     value: system
-    effect: NO_SCHEDULE
+    effect: NoSchedule 
 
 server:
   service:
