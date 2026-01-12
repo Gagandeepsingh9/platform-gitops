@@ -1,4 +1,6 @@
 controller:
+  admissionWebhooks:
+    enabled: false
   nodeSelector:
     nodegroup: system
   tolerations:
