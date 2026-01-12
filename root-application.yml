@@ -1,23 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: gemini-clone
+  name: guestbook
   namespace: argocd
 spec:
   project: default
-
   source:
-    repoURL: https://github.com/Gagandeepsingh9/platform-gitops
-    path: gemini-clone-app/k8s
+    repoURL: https://github.com/Gagandeepsingh9/platform-gitops.git
     targetRevision: main
-
+    path: apps
   destination:
     server: https://kubernetes.default.svc
-    namespace: gemini
+    namespace: argocd
 
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
