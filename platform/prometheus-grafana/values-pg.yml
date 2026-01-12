@@ -1,4 +1,8 @@
 server:
+  persistentVolume:
+    enabled: true
+    storageClass: "gp2" 
+    size: 8Gi
   nodeSelector:
     nodegroup: system
   tolerations:
@@ -8,6 +12,10 @@ server:
     effect: NoSchedule
 
 alertmanager:
+  persistentVolume:
+    enabled: true
+    storageClass: "gp2" 
+    size: 2Gi
   nodeSelector:
     nodegroup: system
   tolerations:
