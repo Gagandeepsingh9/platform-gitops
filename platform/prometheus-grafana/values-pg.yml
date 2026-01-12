@@ -5,7 +5,7 @@ server:
   - key: nodegroup
     value: system
     operator: Equal
-    effect: NO_SCHEDULE
+    effect: NoSchedule
 
 alertmanager:
   nodeSelector:
