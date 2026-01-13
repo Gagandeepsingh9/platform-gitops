@@ -1,10 +1,42 @@
-server:
+prometheus:
+  prometheusSpec:
+    storageSpec: 
+      volumeClaimTemplate:
+        spec:
+          storageClassName: gp3
+          accessModes: ["ReadWriteOnce"]
+          resources:
+            requests:
+              storage: 8Gi
+    nodeSelector:
+      nodegroup: system
+    tolerations:
+    - key: nodegroup
+      value: system
+      operator: Equal
+      effect: NoSchedule
   service:
     type: LoadBalancer
-  persistentVolume:
-    enabled: true
-    storageClass: "gp3" 
-    size: 8Gi
+
+alertmanager:
+  alertmanagerSpec:
+    nodeSelector:
+      nodegroup: system
+    tolerations:
+      - key: nodegroup
+        operator: Equal
+        value: system
+        effect: NoSchedule
+    storage:
+      volumeClaimTemplate:
+        spec:
+          storageClassName: gp3
+          accessModes: ["ReadWriteOnce"]
+          resources:
+            requests:
+              storage: 2Gi
+
+grafana:
   nodeSelector:
     nodegroup: system
   tolerations:
@@ -12,25 +44,5 @@ server:
     value: system
     operator: Equal
     effect: NoSchedule
-
-alertmanager:
-  persistentVolume:
-    enabled: true
-    storageClass: "gp3" 
-    size: 2Gi
-  nodeSelector:
-    nodegroup: system
-  tolerations:
-    - key: nodegroup
-      operator: Equal
-      value: system
-      effect: NoSchedule
-
-pushgateway:
-  nodeSelector:
-    nodegroup: system
-  tolerations:
-    - key: nodegroup
-      operator: Equal
-      value: system
-      effect: NoSchedule
+  service:
+    type: LoadBalancer
