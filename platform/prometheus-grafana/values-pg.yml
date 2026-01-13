@@ -1,7 +1,7 @@
 server:
   persistentVolume:
     enabled: true
-    storageClass: "gp2" 
+    storageClass: "gp3" 
     size: 8Gi
   nodeSelector:
     nodegroup: system
@@ -14,7 +14,7 @@ server:
 alertmanager:
   persistentVolume:
     enabled: true
-    storageClass: "gp2" 
+    storageClass: "gp3" 
     size: 2Gi
   nodeSelector:
     nodegroup: system
