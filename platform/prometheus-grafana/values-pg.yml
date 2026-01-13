@@ -1,4 +1,6 @@
 server:
+  service:
+    type: LoadBalancer
   persistentVolume:
     enabled: true
     storageClass: "gp3" 
