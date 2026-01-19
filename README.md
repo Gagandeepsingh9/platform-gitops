@@ -1,6 +1,6 @@
 ## 📐 Architecture Overview
 
-![Architecture Diagram](./architecture.png)
+![Architecture Diagram](./architecture.jpg)
 
 This repository is the **single source of truth** for the Kubernetes platform and application delivery using a **GitOps-first DevSecOps model** powered by **Argo CD**, **Helm**, and **Kubernetes** on **AWS EKS**.
 
