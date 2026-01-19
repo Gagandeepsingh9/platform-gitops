@@ -1,3 +1,7 @@
+## 📐 Architecture Overview
+
+![Architecture Diagram](./architecture.png)
+
 This repository is the **single source of truth** for the Kubernetes platform and application delivery using a **GitOps-first DevSecOps model** powered by **Argo CD**, **Helm**, and **Kubernetes** on **AWS EKS**.
 
 It manages:
@@ -6,12 +10,6 @@ It manages:
 - Secure, automated, self-healing deployments
 
 ---
-
-## 📐 Architecture Overview
-
-### Secure GitOps-Driven DevSecOps Architecture on AWS (EKS)
-
-![Architecture Diagram](./architecture.png)
 
 **Core Design**
 - Private EKS Cluster inside AWS VPC  
